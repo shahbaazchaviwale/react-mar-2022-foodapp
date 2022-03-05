@@ -3,7 +3,7 @@ import classes from "./Cart.module.css";
 
 const Cart = (props) => {
   const cartItem = (
-    <ul className={classes['cart-items']}>
+    <ul className={classes["cart-items"]}>
       {[
         {
           id: "m4",
@@ -18,19 +18,20 @@ const Cart = (props) => {
   );
 
   return (
-    <Modal>
+    <Modal onCloseModel={props.onClose}>
       {cartItem}
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>36.33</span>
       </div>
       <div className={classes.actions}>
-        <button className={classes['button--alt']}>Close</button>
-        <button className={classes.button}>Close</button>
+        <button className={classes["button--alt"]} onClick={props.onClose}>
+          Close
+        </button>
+        <button className={classes.button}>Order</button>
       </div>
     </Modal>
   );
 };
-
 
 export default Cart;
